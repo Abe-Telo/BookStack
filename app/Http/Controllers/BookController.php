@@ -119,7 +119,8 @@ class BookController extends Controller
         $bookChildren = (new BookContents($book))->getTree(true);
         $bookParentShelves = $book->shelves()->scopes('visible')->get();
         $bookshelfChildren = Bookshelf::visible()->get();
-
+		$bookSiblings = $firstBookParentShelf->visibleBooks;
+        
         View::incrementFor($book);
         if ($request->has('shelf')) {
             $this->entityContextManager->setShelfContext(intval($request->get('shelf')));
@@ -133,6 +134,7 @@ class BookController extends Controller
             'bookChildren'      => $bookChildren,
             'bookParentShelves' => $bookParentShelves,
             'bookshelfChildren' => $bookshelfChildren,
+            'bookSiblings'		=> $bookSiblings,	
             'activity'          => $activities->entityActivity($book, 20, 1),
         ]);
     }
