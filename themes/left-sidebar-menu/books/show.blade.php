@@ -16,7 +16,7 @@
 @section('body')
 
     <div class="mb-s">
-        @include('entities.breadcrumbs', ['crumbs' => [
+        @include('entities.breadcrumbs', ['crumbs' => [ 
             $book,
         ]])
     </div>
@@ -25,6 +25,7 @@
         <h1 class="break-text">{{$book->name}}</h1>
         <div refs="entity-search@contentView" class="book-content">
             <p class="text-muted">{!! nl2br(e($book->description)) !!}</p>
+			     @include('entities.search-form', ['label' => trans('entities.chapters_search_this')])
             @if(count($bookChildren) > 0)
                 <div class="entity-list book-contents">
                     @foreach($bookChildren as $childElement)
@@ -137,33 +138,48 @@
             @if(userCan('content-export'))
                 @include('entities.export-menu', ['entity' => $book])
             @endif
+			
+			@if(count($activity) > 0)
+        <div class="mb-xl">
+            <h5>{{ trans('entities.recent_activity') }}</h5>
+            @include('common.activity-list', ['activity' => $activity])
+        </div>
+    @endif
         </div>
     </div>
 
 @stop
 
 @section('left')
+            @include('entities.search-form', ['label' => trans('entities.chapters_search_this')])
 
-    @include('entities.search-form', ['label' => trans('entities.books_search_this')])
-
-    @if($book->tags->count() > 0)
-        <div class="mb-xl">
-            @include('entities.tag-list', ['entity' => $book])
-        </div>
-    @endif
-
-    @if(count($bookParentShelves) > 0)
-        <div class="actions mb-xl">
+            @if($book->tags->count() > 0)
+                <div class="mb-xl">
+                     @include('entities.tag-list', ['entity' => $book])
+                </div>
+            @endif
+	
+	
+            <nav id="book-tree" class="book-tree"  aria-label="{{ trans('entities.shelves_long') }}">
             <h5>{{ trans('entities.shelves_long') }}</h5>
-            @include('entities.list', ['entities' => $bookParentShelves, 'style' => 'compact'])
-        </div>
-    @endif
+                    @include('entities.shelf-tree', ['current' => $book, 
+								                     'sidebarTree' => $bookParentShelves,  
+								                     'style' => 'compact' ])
+            </nav>	
+	
+            <nav id="book-tree" class="book-tree"   aria-label="{{ trans('entities.shelves_long') }}">
+            <h5>{{ trans('entities.books_navigation') }}</h5>
+                    @include('entities.shelf-tree', ['current' => $current, 
+							                    	 'sidebarTree' => $bookSiblings,  
+								                     'style' => 'compact' ])
+            </nav>
 
-    @if(count($activity) > 0)
-        <div class="mb-xl">
-            <h5>{{ trans('entities.recent_activity') }}</h5>
-            @include('common.activity-list', ['activity' => $activity])
-        </div>
-    @endif
+
+            <nav id="book-tree" class="book-tree"  aria-label="{{ trans('entities.shelves_long') }}">
+            <h5>{{ trans('entities.pages_navigation') }}</h5>
+                    @include('entities.shelf-tree', ['current' => $book, 
+								                     'sidebarTree' => $bookChildren,  
+								                     'style' => 'compact' ])
+</nav>
+  	 
 @stop
-
