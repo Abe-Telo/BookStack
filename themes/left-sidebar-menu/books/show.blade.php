@@ -151,35 +151,138 @@
 @stop
 
 @section('left')
-            @include('entities.search-form', ['label' => trans('entities.chapters_search_this')])
+     @include('entities.search-form', ['label' => trans('entities.chapters_search_this')])
 
-            @if($book->tags->count() > 0)
-                <div class="mb-xl">
-                     @include('entities.tag-list', ['entity' => $book])
-                </div>
-            @endif
+    @if($book->tags->count() > 0)
+        <div class="mb-xl">
+            @include('entities.tag-list', ['entity' => $book])
+        </div>
+    @endif
 	
 	
-            <nav id="book-tree" class="book-tree"  aria-label="{{ trans('entities.shelves_long') }}">
-            <h5>{{ trans('entities.shelves_long') }}</h5>
-                    @include('entities.shelf-tree', ['current' => $book, 
-								                     'sidebarTree' => $bookParentShelves,  
-								                     'style' => 'compact' ])
-            </nav>	
+<nav id="book-tree"
+     class="book-tree" 
+	 aria-label="{{ trans('entities.shelves_long') }}">
+    <h5>{{ trans('entities.shelves_long') }}</h5>
+ @include('entities.shelf-tree', ['current' => $book, 
+								  'sidebarTree' => $bookParentShelves,  
+								  'style' => 'compact' ])
+</nav>	
 	
-            <nav id="book-tree" class="book-tree"   aria-label="{{ trans('entities.shelves_long') }}">
-            <h5>{{ trans('entities.books_navigation') }}</h5>
-                    @include('entities.shelf-tree', ['current' => $current, 
-							                    	 'sidebarTree' => $bookSiblings,  
-								                     'style' => 'compact' ])
-            </nav>
-
-
-            <nav id="book-tree" class="book-tree"  aria-label="{{ trans('entities.shelves_long') }}">
-            <h5>{{ trans('entities.pages_navigation') }}</h5>
-                    @include('entities.shelf-tree', ['current' => $book, 
-								                     'sidebarTree' => $bookChildren,  
-								                     'style' => 'compact' ])
+<nav id="book-tree"
+     class="book-tree" 
+	 aria-label="{{ trans('entities.shelves_long') }}">
+    <h5>{{ trans('entities.books_navigation') }}</h5>
+ @include('entities.shelf-tree', ['current' => $current, 
+								  'sidebarTree' => $bookSiblings,  
+								  'style' => 'compact' ])
 </nav>
-  	 
+
+
+ <nav id="book-tree"
+     class="book-tree" 
+	 aria-label="{{ trans('entities.shelves_long') }}">
+    <h5>{{ trans('entities.pages_navigation') }}</h5>
+ @include('entities.shelf-tree', ['current' => $book, 
+								  'sidebarTree' => $bookChildren,  
+								  'style' => 'compact' ])
+</nav>
+ 
+  
+
+    <!--@include('entities.search-form', ['label' => trans('entities.books_search_this')])-->
+ <!-- Search -->
+
+	 
+	 
+
+
+ 
+		<!--	bookParentShelves -->     
+ 	<!-- List shelf tree -->
+<!--		<nav id="page-navigation" class="mb-xl" aria-label="{{ trans('entities.pages_navigation') }}">
+            <h5>{{ trans('entities.shelves_long') }}</h5>
+              <!--  <div class="sidebar-page-nav menu">  
+						@include('entities.list', ['entities' => $bookshelfChildren, 'style' => 'compact']) 
+                <!--</div> 
+        </nav>-->
+		
+
+	<!-- List shelf tree -->
+<!--		<nav id="page-navigation" class="mb-xl" aria-label="{{ trans('entities.pages_navigation') }}">
+            <h5>{{ trans('entities.books') }}</h5> 
+						@include('entities.list', ['entities' => $bookSiblings, 'style' => 'compact'])  
+        </nav>-->
+		
+		
+
+ 
+  
+        	<!-- List book tree -->
+		<!--<nav id="page-navigation" class="mb-xl" aria-label="{{ trans('entities.pages_navigation') }}">
+            <h5>{{ trans('entities.pages_navigation') }}</h5>
+              <!--  <div class="sidebar-page-nav menu"> -->
+						<!--@include('entities.list', ['entities' => $bookChildren, 'style' => 'compact']) 
+                <!--</div>-->
+       <!-- </nav>-->
+ 
+  
+  
+ 
+        
+ 
+ 
+ 
+ 
+  
+<!--
+    @if (isset($chapterNav) && count($chapterNav))
+        <nav id="page-navigation" class="mb-xl" aria-label="{{ trans('entities.pages_navigation') }}">
+            <h5>{{ trans('entities.pages_navigation') }}</h5>
+            <div class="body">
+                <div class="sidebar-page-nav menu">
+                    @foreach($chapterNav as $navItem)
+                        <li class="page-nav-item h{{ $navItem['level'] }}">
+                            <a href="{{ $navItem['link'] }}" class="text-limit-lines-1 block">{{ $navItem['text'] }}</a>
+                            <div class="primary-background sidebar-page-nav-bullet"></div>
+                        </li>
+                    @endforeach
+                </div>
+            </div>
+        </nav>
+    @endif
+ -->
+<!--
+                include('entities.favourite-action', ['entity' => $chapter])
+       
+                include('entities.export-menu', ['entity' => $chapter])
+
+                include('entities.tag-list', ['entity' => $chapter])
+				
+				include('entities.book-tree', ['book' => $book, 'sidebarTree' => $sidebarTree])
+	 -->
+<!--	 
+<nav id="page-navigation" class="mb-xl" aria-label="{{ trans('entities.pages_navigation') }}">
+<div class="body"> 
+ <div class="sidebar-page-nav menu"> 
+                    @foreach($bookChildren as $childElement)
+                        @if($childElement->isA('chapter'))
+                            @include('chapters.parts.list-item', ['chapter' => $childElement])
+                        @else
+                            @include('pages.parts.list-item', ['page' => $childElement])
+                        @endif
+                    @endforeach
+		  </div>
+		  </div>
+       </nav>
+  -->
 @stop
+
+
+
+
+
+
+
+
+ 

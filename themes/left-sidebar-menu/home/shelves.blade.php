@@ -1,4 +1,4 @@
-@extends('layouts.tri')
+@extends('layouts.wiki')
 
 @section('body')
     @include('shelves.parts.list', ['shelves' => $shelves, 'view' => $view])
@@ -23,4 +23,33 @@
             @include('common.dark-mode-toggle', ['classes' => 'icon-list-item text-primary'])
         </div>
     </div>
+
+@if(count($draftPages) > 0)
+    <div id="recent-drafts" class="mb-xl">
+        <h5>{{ trans('entities.my_recent_drafts') }}</h5>
+        @include('entities.list', ['entities' => $draftPages, 'style' => 'compact'])
+    </div>
+@endif
+
+@if(count($favourites) > 0)
+    <div id="top-favourites" class="mb-xl">
+        <h5>{{ trans('entities.my_most_viewed_favourites') }}</h5>
+        @include('entities.list', [
+            'entities' => $favourites,
+            'style' => 'compact',
+        ])
+        <a href="{{ url('/favourites')  }}" class="text-muted block py-xs">{{ trans('common.view_all') }}</a>
+    </div>
+@endif
+
+
+
+
+
+<div id="recent-activity" class="mb-xl">
+    <h5>{{ trans('entities.recent_activity') }}</h5>
+    @include('common.activity-list', ['activity' => $activity])
+</div>
+
+
 @stop

@@ -71,39 +71,12 @@
 
 @stop
 
-@section('left')
-
-    @if($shelf->tags->count() > 0)
-        <div id="tags" class="mb-xl">
-            @include('entities.tag-list', ['entity' => $shelf])
-        </div>
-    @endif
-
-    <div id="details" class="mb-xl">
-        <h5>{{ trans('common.details') }}</h5>
-        <div class="text-small text-muted blended-links">
-            @include('entities.meta', ['entity' => $shelf])
-            @if($shelf->restricted)
-                <div class="active-restriction">
-                    @if(userCan('restrictions-manage', $shelf))
-                        <a href="{{ $shelf->getUrl('/permissions') }}">@icon('lock'){{ trans('entities.shelves_permissions_active') }}</a>
-                    @else
-                        @icon('lock'){{ trans('entities.shelves_permissions_active') }}
-                    @endif
-                </div>
-            @endif
-        </div>
-    </div>
-
-    @if(count($activity) > 0)
-        <div class="mb-xl">
-            <h5>{{ trans('entities.recent_activity') }}</h5>
-            @include('common.activity-list', ['activity' => $activity])
-        </div>
-    @endif
-@stop
-
 @section('right')
+
+
+
+
+
     <div class="actions mb-xl">
         <h5>{{ trans('common.actions') }}</h5>
         <div class="icon-list text-primary">
@@ -147,8 +120,65 @@
 
         </div>
     </div>
+	<!--stop section('right')-->
+
+
+
+
+
+
+
+
+    @if($shelf->tags->count() > 0)
+        <div id="tags" class="mb-xl">
+            @include('entities.tag-list', ['entity' => $shelf])
+        </div>
+    @endif
+
+    <div id="details" class="mb-xl">
+        <h5>{{ trans('common.details') }}</h5>
+        <div class="text-small text-muted blended-links">
+            @include('entities.meta', ['entity' => $shelf])
+            @if($shelf->restricted)
+                <div class="active-restriction">
+                    @if(userCan('restrictions-manage', $shelf))
+                        <a href="{{ $shelf->getUrl('/permissions') }}">@icon('lock'){{ trans('entities.shelves_permissions_active') }}</a>
+                    @else
+                        @icon('lock'){{ trans('entities.shelves_permissions_active') }}
+                    @endif
+                </div>
+            @endif
+        </div>
+    </div>
+
+    @if(count($activity) > 0)
+        <div class="mb-xl">
+            <h5>{{ trans('entities.recent_activity') }}</h5>
+            @include('common.activity-list', ['activity' => $activity])
+        </div>
+    @endif
+ 
+ 
+
 @stop
 
 
+ 
+@section('left')	 
+<nav id="book-tree"
+     class="book-tree" 
+	 aria-label="{{ trans('entities.shelves_long') }}">
+    <h5>{{ trans('entities.books_navigation') }}</h5>
+ @include('entities.shelf-tree', ['current' => $shelf, 
+								  'sidebarTree' => $bookshelfChildren,  
+								  'style' => 'compact' ])
+</nav>
 
-
+	 	<!-- List shelf tree --> <!--
+<nav id="page-navigation" class="mb-xl" aria-label="{{ trans('entities.pages_navigation') }}">
+ <h5>{{ trans('entities.shelves_long') }}</h5> 
+ @include('entities.list', ['entities' => $bookshelfChildren, 'style' => 'compact']) 
+ </nav> 
+		-->
+	 
+@stop
