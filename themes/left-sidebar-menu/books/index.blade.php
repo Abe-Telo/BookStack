@@ -3,33 +3,8 @@
 @section('body')
     @include('books.parts.list', ['books' => $books, 'view' => $view])
 @stop
-
-@section('left')
-    @if($recents)
-        <div id="recents" class="mb-xl">
-            <h5>{{ trans('entities.recently_viewed') }}</h5>
-            @include('entities.list', ['entities' => $recents, 'style' => 'compact'])
-        </div>
-    @endif
-
-    <div id="popular" class="mb-xl">
-        <h5>{{ trans('entities.books_popular') }}</h5>
-        @if(count($popular) > 0)
-            @include('entities.list', ['entities' => $popular, 'style' => 'compact'])
-        @else
-            <div class="body text-muted">{{ trans('entities.books_popular_empty') }}</div>
-        @endif
-    </div>
-
-    <div id="new" class="mb-xl">
-        <h5>{{ trans('entities.books_new') }}</h5>
-        @if(count($popular) > 0)
-            @include('entities.list', ['entities' => $new, 'style' => 'compact'])
-        @else
-            <div class="body text-muted">{{ trans('entities.books_new_empty') }}</div>
-        @endif
-    </div>
-@stop
+ 
+ 
 
 @section('right')
 
@@ -52,4 +27,43 @@
         </div>
     </div>
 
+
+
+
+    @if($recents)
+<hr style=" border-top: 3px solid #bbb;"  >		
+        <div id="recents" class="mb-xl">
+            <h5>{{ trans('entities.recently_viewed') }}</h5>
+            @include('entities.list', ['entities' => $recents, 'style' => 'compact'])
+        </div>
+    @endif
+
+<hr style=" border-top: 3px solid #bbb;"  >
+    <div id="popular" class="mb-xl">
+        <h5>{{ trans('entities.books_popular') }}</h5>
+        @if(count($popular) > 0)
+            @include('entities.list', ['entities' => $popular, 'style' => 'compact'])
+        @else
+            <div class="body text-muted">{{ trans('entities.books_popular_empty') }}</div>
+        @endif
+    </div>
+
+<hr style=" border-top: 3px solid #bbb;"  >
+    <div id="new" class="mb-xl">
+        <h5>{{ trans('entities.books_new') }}</h5>
+        @if(count($popular) > 0)
+            @include('entities.list', ['entities' => $new, 'style' => 'compact'])
+        @else
+            <div class="body text-muted">{{ trans('entities.books_new_empty') }}</div>
+        @endif
+    </div>
+	
+@stop  
+@section('left')	
+	
+	 	<!-- List shelf tree -->
+ 
+@include('entities.list', ['entities' => $bookshelfChildren, 'style' => 'compact']) 
+ 
 @stop
+
