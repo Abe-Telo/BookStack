@@ -1,3 +1,4 @@
+<!-- Grid List ## -->
 <main class="content-wrap mt-m card">
     <div class="grid half v-center no-row-gap">
         <h1 class="list-heading">{{ trans('entities.books') }}</h1>
