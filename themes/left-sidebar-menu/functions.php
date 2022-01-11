@@ -47,7 +47,7 @@ Theme::listen(ThemeEvents::WEBHOOK_CALL_BEFORE, function (string  $event, Webhoo
 
 	/* notifymyecho.com */
 	'notification' => $msg_default , // 
-	'accessCode' => 'amzn1.ask.account.AH4EU2HIFSMVMY6A7FJMPA7MRRZFJENKA5BLXKR66TPZCNAH3J6FOYMBVCIMAUVS6HRPZMN5DWDHNLSJSXLKBZKAUI4WWTNWHCSXDLHXPZXTZBCPNAEZOYJRUBPOC747VH4W3IEHR44CLZHUBVNA2LECVUWCQY5BIHQGNFUO6WHVFICBGU7OOZ7QMPKEESC6OKFTEN2S6WHI6PI',
+	'accessCode' => 'API_KEY',
 	
 	/* Discord */
 	'content' =>  $msg_default . $GetURL , 
