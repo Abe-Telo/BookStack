@@ -51,7 +51,7 @@ Theme::listen(ThemeEvents::WEBHOOK_CALL_BEFORE, function (string  $event, Webhoo
 	
 	/* Discord */
 	'content' =>  $msg_default . $GetURL , 
-	'username' => 'Wiki Telocall',
+	'username' => 'BookStack Discord Bot',
 	]; 
 
 	if ($detail instanceof Page) { 
