@@ -59,31 +59,29 @@ Theme::listen(ThemeEvents::WEBHOOK_CALL_BEFORE, function (string  $event, Webhoo
 		$webhookData['content'] = 'User: '.user()->name.$s. $type.'d'.$s. $book.$nL. 'Page: ' .$detail->name.$nL. 'Book: ' .$detail->book->name.$nL. 'Time: ' .date('D, M, d, h:i A', (time())).$nL.'URL: ' .$detail->getUrl();
 		$webhookData['DEBUG_'.$book] = $detail;
         }	
-	       if ($book == 'bookshelf') {
-            $webhookData['notification'] = 'At ' .date('D, M d, h:i A', (time())).', User: ' .user()->name. ' '. $type. 'd a ' .$book. ' Named: ' . $detail->name . '.  Shelf description: ' . $detail->description ; 
-			$webhookData['content'] = 'User: '.user()->name.$s. $type.'d'.$s. $book.$nL. 'BookShelf: ' .$detail->name.$nL. 'Description: ' .$detail->description.$nL. 'Time: ' .date('D, M, d, h:i A', (time())).$nL.'URL: ' .$detail->getUrl();
-            $webhookData['DEBUG_'.$book] = $detail;
+	if ($book == 'bookshelf') {
+            	$webhookData['notification'] = 'At ' .date('D, M d, h:i A', (time())).', User: ' .user()->name. ' '. $type. 'd a ' .$book. ' Named: ' . $detail->name . '.  Shelf description: ' . $detail->description ; 
+		$webhookData['content'] = 'User: '.user()->name.$s. $type.'d'.$s. $book.$nL. 'BookShelf: ' .$detail->name.$nL. 'Description: ' .$detail->description.$nL. 'Time: ' .date('D, M, d, h:i A', (time())).$nL.'URL: ' .$detail->getUrl();
+            	$webhookData['DEBUG_'.$book] = $detail;
         }		
 	
-		if ($book == 'book') { 
-            $webhookData['notification'] =   'At ' .date('D, M d, h:i A', (time())).', User: ' .user()->name. ' '. $type. 'd a ' .$book. ' Named: ' . $detail->name . '.  Book description: ' . $detail->description ; //
-			$webhookData['content'] = 'User: '.user()->name.$s. $type.'d'.$s. $book.$nL. 'Book: ' .$detail->name.$nL. 'Description: ' .$detail->description.$nL. 'Time: ' .date('D, M, d, h:i A', (time())).$nL.'URL: ' .$detail->getUrl();
-            $webhookData['DEBUG_'.$book] = $detail;
+	if ($book == 'book') { 
+       		$webhookData['notification'] =   'At ' .date('D, M d, h:i A', (time())).', User: ' .user()->name. ' '. $type. 'd a ' .$book. ' Named: ' . $detail->name . '.  Book description: ' . $detail->description ; //
+		$webhookData['content'] = 'User: '.user()->name.$s. $type.'d'.$s. $book.$nL. 'Book: ' .$detail->name.$nL. 'Description: ' .$detail->description.$nL. 'Time: ' .date('D, M, d, h:i A', (time())).$nL.'URL: ' .$detail->getUrl();
+            	$webhookData['DEBUG_'.$book] = $detail;
         }				       
 		
-		if ($book == 'recyclebindestroy') {
+	if ($book == 'recyclebindestroy') {
  		$newEvent = str_replace('_', ' ', $event);			 
-            $webhookData['notification'] =   $newEvent. 'ed by user: '  .user()->name.', ' .date('D, M d, h:i A', (time())); //
-			$webhookData['content'] = '**' .$newEvent. 'ed** by user: '  .user()->name.$nL. 'Time: ' .date('D, M d, h:i A', (time())).$nL.   'Details: '   .$detail->deletable_type;                  ;
-            $webhookData['DEBUG_'.$book] = $detail;
+		$webhookData['notification'] =   $newEvent. 'ed by user: '  .user()->name.', ' .date('D, M d, h:i A', (time())); //
+		$webhookData['content'] = '**' .$newEvent. 'ed** by user: '  .user()->name.$nL. 'Time: ' .date('D, M d, h:i A', (time())).$nL.   'Details: '   .$detail->deletable_type;                  ;
+		$webhookData['DEBUG_'.$book] = $detail;
         }			
 		
-				
-		if ($book === 'authlogin') { 				
-			$msg_book = user()->name;   
-            $webhookData['notification'] =  'Auth Login: '.user()->name.' Just logged in to wiki.telocall.com';    
-			$webhookData['content'] = '**Auth Login** - '.user()->name.' Just logged in to wiki.telocall.com';   
-            $webhookData['DEBUG_'.$book] = $detail;
+	if ($book === 'authlogin') { 	    
+            	$webhookData['notification'] =  'Auth Login: '.user()->name.' Just logged in to wiki.telocall.com';    
+		$webhookData['content'] = '**Auth Login** - '.user()->name.' Just logged in to wiki.telocall.com';   
+            	$webhookData['DEBUG_'.$book] = $detail;
         }		
 		  
         return $webhookData;
