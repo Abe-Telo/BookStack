@@ -16,7 +16,7 @@ Theme::listen(ThemeEvents::WEBHOOK_CALL_BEFORE, function (string  $event, Webhoo
 	if (strpos($webhook->name, 'API') !== false) {  
         
 	// Build and return the data which will be sent as JSON to the endpoint.
-	$newEvent = str_replace('_', ' was ', $event);	// Event looks neeter 
+	$newEvent = str_replace('_', ' was ', $event);	// Event name looks neeter 
 		
 	$rpl_type = array('update','create','delete','was',' '); // Remove Event detail to book detail
 	$book = str_replace($rpl_type, '', $newEvent); // Show only book/page type
