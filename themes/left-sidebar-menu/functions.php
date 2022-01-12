@@ -27,9 +27,13 @@ Theme::listen(ThemeEvents::WEBHOOK_CALL_BEFORE, function (string  $event, Webhoo
 	$s = ' ';
 	$nL = '
 ';      // culdent pass a \n to discord using this as new line instead.  
-	 
-	 // Avoid errors wirh getURL()
-	if ($event == "auth_login"): 
+	 // Avoid errors wirh getURL()  [/app/Actions/ActivityType.php]
+    $eventError =  ['auth_login','auth_register','auth_password_reset_update','auth_password_reset_request',
+					'api_token_create','api_token_update','api_token_delete',
+					'role_create','role_update','role_delete',
+					'user_create','user_update','user_delete',
+					'maintenance_action_run','settings_update'];
+	if (in_array($event, $eventError)): 
 		$GetURL = (' ');
 		else:
 		$GetURL = ($detail->getUrl()) ;
