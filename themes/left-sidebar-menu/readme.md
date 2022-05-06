@@ -7,10 +7,10 @@ Move app and resources folder into root directory.
 Report bugs....
 
 
-![plot](Shelfs.png)
+![plot](Shelfs.png "Shelfs.png")
 
-![Shlefs](https://github.com/Abe-Telo/BookStack/tree/SideBarMenu-v1.0.0-1/themes/left-sidebar-menu/Shelfs.png)
 
-![Books](https://github.com/Abe-Telo/BookStack/tree/SideBarMenu-v1.0.0-1/themes/left-sidebar-menu/books.png?raw=true)
+![plot](books.png "books.png")
 
-![Categories](https://github.com/Abe-Telo/BookStack/tree/SideBarMenu-v1.0.0-1/themes/left-sidebar-menu/categories.png?raw=true)
+
+![plot](categories.png "categories.png")
