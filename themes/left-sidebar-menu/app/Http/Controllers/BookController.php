@@ -125,7 +125,12 @@ class BookController extends Controller
 		$bookshelfChildren = Bookshelf::visible()->get();
 
 		$firstBookParentShelf = $bookParentShelves->first();
-		$bookSiblings = $firstBookParentShelf->visibleBooks;
+		// If some users don't have permishion on root (shelf) then if book is displayed 
+		// with propoper permishion it will fail with a error or a debug message if enabled		
+		// $bookSiblings = $firstBookParentShelf->visibleBooks; 
+	    	// In Most cases you will use this. Bypassing shelfs. Book will be shown under books and not shelfs.
+		$bookSiblings = $firstBookParentShelf->visibleBooks ?? collect([]); 	    
+
 
         View::incrementFor($book);
         if ($request->has('shelf')) {
