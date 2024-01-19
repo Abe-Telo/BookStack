@@ -62,7 +62,7 @@ return [
     'watch_update_level_notification' => 'Watch preferences successfully updated',
 
     // Auth
-    'auth_login' => 'logged in',
+    'auth_login' => 'ארײַנגעלאָגט',
     'auth_register' => 'registered as new user',
     'auth_password_reset_request' => 'requested user password reset',
     'auth_password_reset_update' => 'reset user password',
@@ -77,41 +77,41 @@ return [
     'maintenance_action_run' => 'ran maintenance action',
 
     // Webhooks
-    'webhook_create' => 'created webhook',
-    'webhook_create_notification' => 'Webhook successfully created',
-    'webhook_update' => 'updated webhook',
+    'webhook_create' => 'Webhook געמאַכט',
+    'webhook_create_notification' => 'Webhook הצלחהדיק געמאַכט',
+    'webhook_update' => 'Webhook דערהיינטיקט',
     'webhook_update_notification' => 'Webhook successfully updated',
-    'webhook_delete' => 'deleted webhook',
-    'webhook_delete_notification' => 'Webhook successfully deleted',
+    'webhook_delete' => 'Webhook אויסגעמעקט',
+    'webhook_delete_notification' => 'Webhook הצלחהדיק אויסגעמעקט',
 
     // Users
-    'user_create' => 'created user',
-    'user_create_notification' => 'User successfully created',
+    'user_create' => 'User געמאַכט',
+    'user_create_notification' => 'User הצלחהדיק געמאַכט',
     'user_update' => 'updated user',
     'user_update_notification' => 'User successfully updated',
-    'user_delete' => 'deleted user',
-    'user_delete_notification' => 'User successfully removed',
+    'user_delete' => 'User אויסגעמעקט',
+    'user_delete_notification' => 'User הצלחהדיק אויסגעמעקט',
 
     // API Tokens
-    'api_token_create' => 'created api token',
-    'api_token_create_notification' => 'API token successfully created',
+    'api_token_create' => 'API token געמאַכט',
+    'api_token_create_notification' => 'API token הצלחהדיק געמאַכט',
     'api_token_update' => 'updated api token',
     'api_token_update_notification' => 'API token successfully updated',
-    'api_token_delete' => 'deleted api token',
-    'api_token_delete_notification' => 'API token successfully deleted',
+    'api_token_delete' => 'API token אויסגעמעקט',
+    'api_token_delete_notification' => 'API token הצלחהדיק אויסגעמעקט',
 
     // Roles
-    'role_create' => 'created role',
-    'role_create_notification' => 'Role successfully created',
+    'role_create' => 'Role געמאַכט',
+    'role_create_notification' => 'Role הצלחהדיק געמאַכט',
     'role_update' => 'updated role',
     'role_update_notification' => 'Role successfully updated',
-    'role_delete' => 'deleted role',
-    'role_delete_notification' => 'Role successfully deleted',
+    'role_delete' => 'Role אויסגעמעקט',
+    'role_delete_notification' => 'Role הצלחהדיק אויסגעמעקט',
 
     // Recycle Bin
-    'recycle_bin_empty' => 'emptied recycle bin',
-    'recycle_bin_restore' => 'restored from recycle bin',
-    'recycle_bin_destroy' => 'removed from recycle bin',
+    'recycle_bin_empty' => 'אויסגעליידיקט רעסייקל בין',
+    'recycle_bin_restore' => 'צוריקגעשטעלט פֿון רעסייקל בין',
+    'recycle_bin_destroy' => 'אראפגענומען פֿון רעסייקל בין',
 
     // Comments
     'commented_on'                => 'commented on',
