@@ -89,8 +89,8 @@ return [
     'profile_menu' => 'Profile Menu',
     'view_profile' => 'View Profile',
     'edit_profile' => 'Edit Profile',
-    'dark_mode' => 'Dark Mode',
-    'light_mode' => 'Light Mode',
+    'dark_mode' => 'דונקלער מאָדע',
+    'light_mode' => 'ליכטער מאָדע',
     'global_search' => 'Global Search',
 
     // Layout tabs
