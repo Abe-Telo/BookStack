@@ -6,7 +6,7 @@
 return [
 
     // Pages
-    'page_create'                 => 'created page',
+    'page_create'                 => 'געמאַכט בלאַט',
     'page_create_notification'    => 'Page successfully created',
     'page_update'                 => 'updated page',
     'page_update_notification'    => 'Page successfully updated',
@@ -14,34 +14,34 @@ return [
     'page_delete_notification'    => 'Page successfully deleted',
     'page_restore'                => 'restored page',
     'page_restore_notification'   => 'Page successfully restored',
-    'page_move'                   => 'moved page',
+    'page_move'                   => 'געריקט בלאַט',
     'page_move_notification'      => 'Page successfully moved',
 
     // Chapters
-    'chapter_create'              => 'created chapter',
-    'chapter_create_notification' => 'Chapter successfully created',
+    'chapter_create'              => 'געמאַכט קאַפּיטל',
+    'chapter_create_notification' => 'קאַפּיטל הצלחהדיק געמאַכט',
     'chapter_update'              => 'updated chapter',
     'chapter_update_notification' => 'Chapter successfully updated',
-    'chapter_delete'              => 'deleted chapter',
-    'chapter_delete_notification' => 'Chapter successfully deleted',
-    'chapter_move'                => 'moved chapter',
-    'chapter_move_notification' => 'Chapter successfully moved',
+    'chapter_delete'              => 'אויסגעמעקט קאַפּיטל',
+    'chapter_delete_notification' => 'קאַפּיטל הצלחהדיק אויסגעמעקט',
+    'chapter_move'                => 'אריבערגעפירט קאַפּיטל',
+    'chapter_move_notification'   => 'קאַפּיטל הצלחהדיק אריבערגעפירט',
 
     // Books
-    'book_create'                 => 'created book',
-    'book_create_notification'    => 'Book successfully created',
+    'book_create'                 => 'געמאַכט בוך',
+    'book_create_notification'    => 'בוך הצלחהדיק געמאַכט',
     'book_create_from_chapter'              => 'converted chapter to book',
     'book_create_from_chapter_notification' => 'Chapter successfully converted to a book',
     'book_update'                 => 'updated book',
     'book_update_notification'    => 'Book successfully updated',
-    'book_delete'                 => 'deleted book',
-    'book_delete_notification'    => 'Book successfully deleted',
+    'book_delete'                 => 'אויסגעמעקט בוך',
+    'book_delete_notification'    => 'בוך הצלחהדיק אויסגעמעקט',
     'book_sort'                   => 'sorted book',
     'book_sort_notification'      => 'Book successfully re-sorted',
 
     // Bookshelves
-    'bookshelf_create'            => 'created shelf',
-    'bookshelf_create_notification'    => 'Shelf successfully created',
+    'bookshelf_create'            => 'געמאַכט געשטעל',
+    'bookshelf_create_notification'    => 'געשטעל הצלחהדיק געמאַכט',
     'bookshelf_create_from_book'    => 'converted book to shelf',
     'bookshelf_create_from_book_notification'    => 'Book successfully converted to a shelf',
     'bookshelf_update'                 => 'updated shelf',
